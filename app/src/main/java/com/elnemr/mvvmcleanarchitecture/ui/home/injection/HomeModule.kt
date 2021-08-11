@@ -26,10 +26,10 @@ object HomeModule {
     @ActivityRetainedScoped
     fun provideHomeRepository(repository: HomeRepositoryImpl): HomeRepository = repository
 
-    @Provides
-    @ActivityRetainedScoped
-    fun provideHomeViewModel(activity: MainActivity): HomeViewModel =
-        ViewModelProvider(activity).get(HomeViewModel::class.java)
+//    @Provides
+//    @ActivityRetainedScoped
+//    fun provideHomeViewModel(activity: MainActivity): HomeViewModel =
+//        ViewModelProvider(activity).get(HomeViewModel::class.java)
 
     @Provides
     @ActivityRetainedScoped

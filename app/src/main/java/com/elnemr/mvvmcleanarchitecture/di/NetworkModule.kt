@@ -1,6 +1,7 @@
 package com.elnemr.mvvmcleanarchitecture.di
 
 import com.elnemr.mvvmcleanarchitecture.data.network.ApiInterface
+import com.elnemr.mvvmcleanarchitecture.util.Constants.Companion.BASE_URL
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -58,7 +59,7 @@ object NetworkModule {
             .build()
 
         return builder.client(client)
-            .baseUrl("BASE_URL")
+            .baseUrl(BASE_URL)
             .addConverterFactory(converterFactory)
             .build()
             .create(ApiInterface::class.java)

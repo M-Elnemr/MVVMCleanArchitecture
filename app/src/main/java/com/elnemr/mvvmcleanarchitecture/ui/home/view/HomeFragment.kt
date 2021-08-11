@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.elnemr.mvvmcleanarchitecture.R
 import com.elnemr.mvvmcleanarchitecture.base.view.BaseFragment
+import com.elnemr.mvvmcleanarchitecture.databinding.FragmentHomeBinding
 import com.elnemr.mvvmcleanarchitecture.ui.home.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment(override val layoutResourceLayout: Int = R.layout.fragment_home) :
-    BaseFragment() {
+    BaseFragment<FragmentHomeBinding>() {
         lateinit var viewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +31,6 @@ class HomeFragment(override val layoutResourceLayout: Int = R.layout.fragment_ho
         // Inflate the layout for this fragment
 
         return rootView
-    }
-
-    override fun setUpViewSliceActionObservers() {
     }
 
     override fun setUpViewModelStateObservers() {
@@ -54,8 +52,7 @@ class HomeFragment(override val layoutResourceLayout: Int = R.layout.fragment_ho
         }
     }
 
-
-    override fun initViewSlices() {
+    override fun onFragmentCreated(dataBinder: FragmentHomeBinding) {
+        dataBinder.dummy = "Hello There"
     }
-
 }

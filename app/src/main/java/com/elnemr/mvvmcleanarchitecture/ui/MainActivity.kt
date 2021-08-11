@@ -6,13 +6,15 @@ import androidx.navigation.findNavController
 import com.elnemr.mvvmcleanarchitecture.R
 import com.elnemr.mvvmcleanarchitecture.base.view.BaseActivity
 import com.elnemr.mvvmcleanarchitecture.data.local.MainDao
+import com.elnemr.mvvmcleanarchitecture.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity(override val layoutResourceId: Int = R.layout.activity_main) : BaseActivity() {
+class MainActivity(override val layoutResourceId: Int = R.layout.activity_main) : BaseActivity<ActivityMainBinding>() {
 
     private lateinit var navController: NavController
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,10 @@ class MainActivity(override val layoutResourceId: Int = R.layout.activity_main) 
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onActivityCreated(dataBinder: ActivityMainBinding) {
+        dataBinder.dmmy = "Hello"
     }
 
 }
