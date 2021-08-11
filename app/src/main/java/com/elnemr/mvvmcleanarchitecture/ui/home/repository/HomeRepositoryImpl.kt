@@ -12,7 +12,7 @@ import javax.inject.Inject
 @ActivityRetainedScoped
 class HomeRepositoryImpl @Inject constructor(private val apiInterface: ApiInterface, private val dao: MainDao): HomeRepository {
 
-    override suspend fun fetchNetworkData(dummy: String): Response<DummyModel> = apiInterface.getData(dummy)
+    override suspend fun fetchNetworkData(params: HashMap<String, String>): Response<DummyModel> = apiInterface.getData(params)
 
     override fun fetchLocalData(): Flow<List<DummyEntity>> = dao.fetchData()
 

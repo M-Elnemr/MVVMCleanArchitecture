@@ -7,7 +7,7 @@ import retrofit2.Response
 
 interface HomeRepository {
 
-    suspend fun fetchNetworkData(dummy: String): Response<DummyModel>
+    suspend fun fetchNetworkData(params: HashMap<String, String>): Response<DummyModel>
 
     fun fetchLocalData(): Flow<List<DummyEntity>>
 
