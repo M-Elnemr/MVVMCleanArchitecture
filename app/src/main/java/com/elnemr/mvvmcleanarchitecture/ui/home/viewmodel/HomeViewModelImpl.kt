@@ -51,11 +51,11 @@ class HomeViewModelImpl @Inject constructor(
         }
     }
     private suspend fun fetchNetworkDataSafeCall(params: HashMap<String, String>) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!hasInternetConnection()) {
-                return
-            }
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            if (!hasInternetConnection()) {
+//                return
+//            }
+//        }
         fetchDummyUseCase.execute(params)
     }
 

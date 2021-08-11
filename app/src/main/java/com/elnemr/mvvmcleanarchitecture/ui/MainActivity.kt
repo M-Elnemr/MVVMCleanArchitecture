@@ -5,7 +5,9 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.elnemr.mvvmcleanarchitecture.R
 import com.elnemr.mvvmcleanarchitecture.base.view.BaseActivity
+import com.elnemr.mvvmcleanarchitecture.data.local.MainDao
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity(override val layoutResourceId: Int = R.layout.activity_main) : BaseActivity() {

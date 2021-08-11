@@ -15,8 +15,8 @@ import javax.inject.Inject
 class InsertDatabaseDummyUseCase @Inject constructor(private val homeRepository: HomeRepository) : UseCase<Boolean, DummyEntity>,
     BaseUseCase<Boolean, DummyEntity>() {
 
-    override suspend fun execute(params: DummyEntity) = coroutineScope{
-       homeRepository.insertIntoDataBase(params)
+    override suspend fun execute(params: DummyEntity?) = coroutineScope{
+       homeRepository.insertIntoDataBase(params!!)
     }
 
 }

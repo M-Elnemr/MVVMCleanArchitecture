@@ -4,22 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.elnemr.mvvmcleanarchitecture.R
 import com.elnemr.mvvmcleanarchitecture.base.view.BaseFragment
 import com.elnemr.mvvmcleanarchitecture.ui.home.viewmodel.HomeViewModel
-import com.elnemr.mvvmcleanarchitecture.util.observe
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment(override val layoutResourceLayout: Int = R.layout.fragment_home) :
     BaseFragment() {
-
-    @Inject
-    lateinit var viewModel: HomeViewModel
+        lateinit var viewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
+
     }
 
     override fun onCreateView(
@@ -28,6 +28,7 @@ class HomeFragment(override val layoutResourceLayout: Int = R.layout.fragment_ho
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         // Inflate the layout for this fragment
+
         return rootView
     }
 
@@ -35,16 +36,21 @@ class HomeFragment(override val layoutResourceLayout: Int = R.layout.fragment_ho
     }
 
     override fun setUpViewModelStateObservers() {
-        observe(viewModel.getState()) { onStateChanged(it) }
+//        observe(viewModel.getState()) { onStateChanged(it) }
     }
 
     private fun onStateChanged(state: HomeViewModel.State) {
-        when(state){
-            is HomeViewModel.State.DummyDataBaseLoaded -> {}
-            is HomeViewModel.State.DummyDataInserted -> {}
-            is HomeViewModel.State.DummyLoaded -> {}
-            HomeViewModel.State.ShowContent -> {}
-            HomeViewModel.State.ShowLoading -> {}
+        when (state) {
+            is HomeViewModel.State.DummyDataBaseLoaded -> {
+            }
+            is HomeViewModel.State.DummyDataInserted -> {
+            }
+            is HomeViewModel.State.DummyLoaded -> {
+            }
+            HomeViewModel.State.ShowContent -> {
+            }
+            HomeViewModel.State.ShowLoading -> {
+            }
         }
     }
 
