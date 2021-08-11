@@ -2,7 +2,7 @@ package com.elnemr.mvvmcleanarchitecture.ui.home.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.elnemr.mvvmcleanarchitecture.base.BaseViewModel
+import com.elnemr.mvvmcleanarchitecture.base.viewModel.BaseViewModel
 import com.elnemr.mvvmcleanarchitecture.data.local.DummyEntity
 
 abstract class HomeViewModel(application: Application) : BaseViewModel(application) {

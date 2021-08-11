@@ -1,4 +1,4 @@
-package com.elnemr.mvvmcleanarchitecture.base
+package com.elnemr.mvvmcleanarchitecture.base.adapter
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil

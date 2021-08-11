@@ -1,4 +1,4 @@
-package com.elnemr.mvvmcleanarchitecture.base
+package com.elnemr.mvvmcleanarchitecture.base.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 

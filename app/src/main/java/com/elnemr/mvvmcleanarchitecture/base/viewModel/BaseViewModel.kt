@@ -1,4 +1,4 @@
-package com.elnemr.mvvmcleanarchitecture.base
+package com.elnemr.mvvmcleanarchitecture.base.viewModel
 
 import android.app.Application
 import android.content.Context
@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
+import com.elnemr.mvvmcleanarchitecture.base.NetworkResult
 import retrofit2.Response
 
 abstract class BaseViewModel(private val application: Application) : ViewModel() {

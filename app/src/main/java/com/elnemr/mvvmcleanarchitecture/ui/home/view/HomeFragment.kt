@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elnemr.mvvmcleanarchitecture.R
-import com.elnemr.mvvmcleanarchitecture.base.BaseFragment
+import com.elnemr.mvvmcleanarchitecture.base.view.BaseFragment
 
 class HomeFragment(override val layoutResourceLayout: Int = R.layout.fragment_home) : BaseFragment() {
 

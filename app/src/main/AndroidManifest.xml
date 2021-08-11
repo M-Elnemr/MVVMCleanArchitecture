@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.elnemr.mvvmcleanarchitecture.base.BaseActivity"/>
+        <activity android:name="com.elnemr.mvvmcleanarchitecture.base.view.BaseActivity"/>
     </application>
 
 </manifest>

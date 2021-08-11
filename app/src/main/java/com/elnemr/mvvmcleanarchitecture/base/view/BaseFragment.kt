@@ -1,4 +1,4 @@
-package com.elnemr.mvvmcleanarchitecture.base
+package com.elnemr.mvvmcleanarchitecture.base.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

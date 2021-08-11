@@ -1,4 +1,4 @@
-package com.elnemr.mvvmcleanarchitecture.base
+package com.elnemr.mvvmcleanarchitecture.base.view
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
