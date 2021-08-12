@@ -5,7 +5,9 @@ import androidx.room.PrimaryKey
 import com.elnemr.mvvmcleanarchitecture.util.Constants.Companion.TABLE
 
 @Entity(tableName = TABLE)
-class DummyEntity() {
+data class DummyEntity(
+    var name: String = ""
+) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 }

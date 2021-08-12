@@ -2,6 +2,8 @@ package com.elnemr.mvvmcleanarchitecture.ui.home.viewmodel
 
 import android.app.Application
 import android.os.Build
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.*
 import com.elnemr.mvvmcleanarchitecture.base.NetworkResult
 import com.elnemr.mvvmcleanarchitecture.data.local.DummyEntity
@@ -15,8 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class HomeViewModelImpl @Inject constructor(
+class HomeViewModelImpl(
     application: Application,
     private val fetchDatabaseDummyUseCase: FetchDatabaseDummyUseCase,
     private val insertDatabaseDummyUseCase: InsertDatabaseDummyUseCase,
@@ -66,9 +67,6 @@ class HomeViewModelImpl @Inject constructor(
     override suspend fun insertIntoDatabase(dummyEntity: DummyEntity) {
         insertDatabaseDummyUseCase.execute(dummyEntity)
     }
-
-
-
 
 }
 
