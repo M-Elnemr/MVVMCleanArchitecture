@@ -9,7 +9,6 @@ import com.elnemr.mvvmcleanarchitecture.ui.home.repository.HomeRepository
 import javax.inject.Inject
 
 class FetchDatabaseDummyUseCase @Inject constructor(private val homeRepository: HomeRepository) :
-    UseCase<LiveData<List<DummyEntity>>, HashMap<String, String>>,
     BaseUseCase<LiveData<List<DummyEntity>>, HashMap<String, String>>() {
 
     override suspend fun execute(params: HashMap<String, String>?) {

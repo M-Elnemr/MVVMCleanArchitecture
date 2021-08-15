@@ -12,7 +12,6 @@ import com.elnemr.mvvmcleanarchitecture.models.Dummy
 
 class HomeAdapter : BaseAdapter<Dummy>() {
 
-//    private val dummyList: MutableList<Dummy> = mutableListOf()
     private var mDiffer = AsyncListDiffer<Dummy>(this, DiffCallBack<Dummy>())
 
     override fun setDataList(dataList: List<Dummy>) {

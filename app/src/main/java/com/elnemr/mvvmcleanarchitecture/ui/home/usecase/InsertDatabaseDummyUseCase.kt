@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import javax.inject.Inject
 
-class InsertDatabaseDummyUseCase @Inject constructor(private val homeRepository: HomeRepository) : UseCase<Boolean, DummyEntity>,
+class InsertDatabaseDummyUseCase @Inject constructor(private val homeRepository: HomeRepository) :
     BaseUseCase<Boolean, DummyEntity>() {
 
     override suspend fun execute(params: DummyEntity?) = coroutineScope{

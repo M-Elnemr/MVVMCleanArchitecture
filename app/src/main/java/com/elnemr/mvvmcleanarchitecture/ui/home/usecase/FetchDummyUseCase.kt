@@ -7,7 +7,7 @@ import com.elnemr.mvvmcleanarchitecture.models.DummyModel
 import com.elnemr.mvvmcleanarchitecture.ui.home.repository.HomeRepository
 import javax.inject.Inject
 
-class FetchDummyUseCase @Inject constructor(private val homeRepository: HomeRepository) : UseCase<NetworkResult<DummyModel>, HashMap<String, String>>,
+class FetchDummyUseCase @Inject constructor(private val homeRepository: HomeRepository) :
     BaseUseCase<NetworkResult<DummyModel>, HashMap<String, String>>() {
 
     override suspend fun execute(params: HashMap<String, String>?) {
