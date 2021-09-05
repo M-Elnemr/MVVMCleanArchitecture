@@ -3,7 +3,7 @@
 it's a simple Showcase project that presents a modern, 2021 approach to Android application development.
 
 # Tech-stack
-Kotlin, 
+Kotlin, \n
 Kotlin Coroutines, 
 Hilt for dependency injection, 
 data binding, 
