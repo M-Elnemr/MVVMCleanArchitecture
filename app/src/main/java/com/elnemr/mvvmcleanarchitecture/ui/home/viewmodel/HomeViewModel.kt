@@ -21,8 +21,8 @@ abstract class HomeViewModel(application: Application) : BaseViewModel(applicati
 
     fun getState(): LiveData<State> = mediator
 
-    abstract suspend fun readLocalData()
-    abstract suspend fun insertIntoDatabase(dummyEntity: DummyEntity)
-    abstract suspend fun fetchNetworkData(params: HashMap<String, String>)
+    abstract fun readLocalData()
+    abstract fun insertIntoDatabase(dummyEntity: DummyEntity)
+    abstract fun fetchNetworkData(params: HashMap<String, String>)
 
 }

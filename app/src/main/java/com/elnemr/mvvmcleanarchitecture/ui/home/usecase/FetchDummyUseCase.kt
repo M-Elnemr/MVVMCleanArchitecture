@@ -22,6 +22,4 @@ class FetchDummyUseCase @Inject constructor(private val homeRepository: HomeRepo
         }
     }
 
-
-
 }

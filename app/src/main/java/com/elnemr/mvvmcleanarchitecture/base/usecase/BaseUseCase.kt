@@ -3,11 +3,38 @@ package com.elnemr.mvvmcleanarchitecture.base.usecase
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.elnemr.mvvmcleanarchitecture.base.NetworkResult
+import kotlinx.coroutines.*
 import retrofit2.Response
+import kotlin.coroutines.CoroutineContext
 
 abstract class BaseUseCase<T, Params>(
     protected val liveData: MutableLiveData<T> = MutableLiveData()
 ) : UseCase<T, Params> {
+
+    private val parentJob = SupervisorJob()
+    private val mainDispatcher = Dispatchers.Main
+    private val backgroundDispatcher = Dispatchers.Default
+
+    override val coroutineContext: CoroutineContext
+        get() = parentJob + mainDispatcher
+
+    operator fun invoke(
+        params: Params?
+    ) {
+        launch {
+            withContext(backgroundDispatcher) {
+                execute(params)
+            }
+        }
+    }
+
+    protected fun <T> startAsync(block: suspend () -> T): Deferred<T> = async(parentJob) {
+        block()
+    }
+
+    fun clear() {
+        parentJob.cancel()
+    }
 
 
     override fun getLiveData(): LiveData<T> = liveData
@@ -20,4 +47,6 @@ abstract class BaseUseCase<T, Params>(
             else -> NetworkResult.Error(response.message())
         }
     }
+
+
 }

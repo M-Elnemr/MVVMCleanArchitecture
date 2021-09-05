@@ -45,80 +45,18 @@ class HomeViewModelImpl(
         mediator.value = State.DummyDataBaseLoaded(data)
     }
 
-    override suspend fun fetchNetworkData(params: HashMap<String, String>) {
+    override fun fetchNetworkData(params: HashMap<String, String>) {
         mediator.value = State.ShowLoading
-        viewModelScope.launch(Dispatchers.IO) {
-            fetchNetworkDataSafeCall(params)
-        }
-    }
-    private suspend fun fetchNetworkDataSafeCall(params: HashMap<String, String>) {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            if (!hasInternetConnection()) {
-//                return
-//            }
-//        }
-        fetchDummyUseCase.execute(params)
+        fetchDummyUseCase.invoke(params)
+
     }
 
-    override suspend fun readLocalData() {
-        fetchDatabaseDummyUseCase.execute(null)
+    override fun readLocalData() {
+        fetchDatabaseDummyUseCase.invoke(null)
     }
 
-    override suspend fun insertIntoDatabase(dummyEntity: DummyEntity) {
-        insertDatabaseDummyUseCase.execute(dummyEntity)
+    override fun insertIntoDatabase(dummyEntity: DummyEntity) {
+        insertDatabaseDummyUseCase.invoke(dummyEntity)
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//@HiltViewModel
-//class HomeViewModelImpl @Inject constructor(
-//    application: Application,
-//    private val homeRepository: HomeRepository
-//) : HomeViewModel(application) {
-//
-//    private val dummyDataResponse: MutableLiveData<NetworkResult<DummyModel>> = MutableLiveData()
-//
-//    override suspend fun fetchNetworkData(dummy: String) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            fetchNetworkDataSafeCall(dummy)
-//        }
-//    }
-//    override suspend fun fetchNetworkDataSafeCall(dummy: String) {
-//        dummyDataResponse.value = NetworkResult.Loading()
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            if (!hasInternetConnection()) {
-//                dummyDataResponse.value = NetworkResult.NoInternet()
-//                return
-//            }
-//        }
-//        try{
-//            val response = homeRepository.fetchNetworkData(dummy)
-//            dummyDataResponse.value = handleResponse(response)
-//
-//        }catch (e: Exception){
-//            dummyDataResponse.value = NetworkResult.Error(e.message)
-//        }
-//    }
-//
-//    override fun readLocalData(): LiveData<List<DummyEntity>> =
-//        homeRepository.fetchLocalData().asLiveData()
-//
-//    override suspend fun insertIntoDatabase(dummyEntity: DummyEntity) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            homeRepository.insertIntoDataBase(dummyEntity)
-//        }
-//    }
-//
-//}
