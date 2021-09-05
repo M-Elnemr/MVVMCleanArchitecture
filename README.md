@@ -3,19 +3,31 @@
 it's a simple Showcase project that presents a modern, 2021 approach to Android application development.
 
 # Tech-stack
-Kotlin, \n
-Kotlin Coroutines, 
-Hilt for dependency injection, 
-data binding, 
+Kotlin 
+
+Kotlin Coroutines
+
+Hilt for dependency injection
+
+data binding
+
 -Jetpack- 
-Navigation Components, 
-LiveData, 
-Lifecycle, 
-ViewModel, 
+
+Navigation Components
+
+LiveData
+
+Lifecycle
+
+ViewModel
+
 usecase (Powered up with coroutines)
-Room database, 
+
+Room database
+
 
 Each view has it's own module to keep everything seperate and clean.
+
 I used usecase for every request to keep everyrequest clear and seperated.
 
 View (fragment or activity) - ViewModel - Usecase (kotin coroutines) - Repository -> (request data form local database or server).
