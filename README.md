@@ -19,7 +19,7 @@ LiveData
 
 Lifecycle
 
-ViewModel
+ViewModel (with state so it considers as MVI)
 
 usecase (Powered up with coroutines)
 
