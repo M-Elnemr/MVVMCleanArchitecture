@@ -1,4 +1,4 @@
-# MVVMCleanArchitecture
+# MVVMCleanArchitecture (MVI)
 
 it's a simple Showcase project that presents a modern, 2021 approach to Android application development.
 
